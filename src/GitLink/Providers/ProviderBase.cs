@@ -75,7 +75,7 @@ namespace GitLink.Providers
                 repositoryDirectory = _repositoryPreparer.Prepare(context, temporaryFilesContext);
             }
 
-            using (var repository = new Repository(repositoryDirectory))
+            using (var repository = new Repository(Repository.Discover(repositoryDirectory)))
             {
                 if (string.IsNullOrEmpty(context.ShaHash))
                 {
