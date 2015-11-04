@@ -83,7 +83,7 @@ namespace GitLink
 
                     Log.Info("Using provider '{0}'", provider.GetType().Name);
 
-                    var shaHash = context.Provider.GetShaHashOfCurrentBranch(context, temporaryFilesContext);
+                    var shaHash = context.ShaHash ?? context.Provider.GetShaHashOfCurrentBranch(context, temporaryFilesContext);
 
                     Log.Info("Using commit sha '{0}' as version stamp", shaHash);
 
